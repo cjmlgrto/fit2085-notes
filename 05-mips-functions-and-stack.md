@@ -1,4 +1,4 @@
-[← Return to Index]()
+[← Return to Index](https://github.com/cjmlgrto/fit2085-notes/)
 
 # MIPS Functions and Stack
 
