@@ -67,3 +67,28 @@ class Heap:
 		else:
 			return 2*k + 1
 ```
+
+## Heap Sort
+|             | Complexity              | Note | 
+|---          |---                      |---   |
+| Worst Case: | **O(n log n)**    | Because it has to iterate over the list for every item |
+| Best Case:  | **O(n log n)**    | Because it has to iterate over the list for every item
+| Stability:  | **No**              |
+
+1. For each element in a list, add it to the heap
+2. While heap is not empty, get max item and put it into a new list
+
+```python
+from heap import Heap
+
+def heap_sort(L):
+    heap = Heap()
+    new_list = []
+    i = 0
+    while len(heap) < len(L):
+        heap.add(L[i])
+        i += 1
+    while len(heap) > 0:
+        new_list.apppend(heap.get_max())
+    return new_list
+```
