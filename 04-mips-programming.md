@@ -73,7 +73,7 @@ var3:		.word 0
 ## Example: Check if Negative
 ```assembly
 			.data
-prompt:	.asciiz "Enter an int: "
+prompt:		.asciiz "Enter an int: "
 msg:		.asciiz "Negative!"
 
 			.text

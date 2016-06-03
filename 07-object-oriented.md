@@ -149,6 +149,17 @@ except:
 	do something else...
 ```
 
+## Overloading Operators
+
+| Operation | Class Method |
+|:---:      |:---:         |
+| `str(obj)` | `__str__(self)` |
+| `len(obj)` | `__len__(self)` |
+| `item in obj` | `__contains__(self, item)` |
+| `y = obj[i]` | `__getitem__(self, i)` |
+| `obj[i] = x` | `__setitem__(self, i, x)` |
+| ... | ...|
+
 
 
 
