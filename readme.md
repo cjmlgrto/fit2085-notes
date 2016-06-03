@@ -11,3 +11,4 @@
 7. [Object-Oriented Programming](https://github.com/cjmlgrto/fit2085-notes/blob/master/07-object-oriented.md)
 8. [Array Implementations of ADTs](https://github.com/cjmlgrto/fit2085-notes/blob/master/08-adt-arrays.md)
 9. [Searching](https://github.com/cjmlgrto/fit2085-notes/blob/master/09-searching.md)
+10. [Linked Structures](https://github.com/cjmlgrto/fit2085-notes/blob/master/10-linked-structures.md)
