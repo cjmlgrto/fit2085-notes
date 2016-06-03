@@ -102,11 +102,11 @@ exit:		li		$v0, 10
 ## Lists in MIPS
 
 ### Allocating Memory
-Any list of size $n$ requires $4n + 4$ bytes of space. To allocate memory for a list in the `.data` segment:
+Any list of size **n** requires **4n + 4** bytes of space. To allocate memory for a list in the `.data` segment:
 
-1. Compute $4n + 4$
+1. Compute **4n + 4**
 2. Let OS allocate memory via `syscall`
-3. Store $n$ as the list's "first" value
+3. Store **n** as the list's "first" value
 4. (Optional) store OS return value into data segment
 
 ```assembly
@@ -133,7 +133,7 @@ Any list of size $n$ requires $4n + 4$ bytes of space. To allocate memory for a 
 ```
 
 ### Manipulating Lists
-- $i$-th item is found by calculating $(4i + 4)$ $ + $ `list address`
+- **i**-th item is found by calculating **(4i + 4)** + `list address`
 - can be over-written with another value or printed, etc
 
 ## Loops in MIPS
