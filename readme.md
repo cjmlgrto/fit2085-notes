@@ -18,3 +18,4 @@
 14. [Recursive Sorting](https://github.com/cjmlgrto/fit2085-notes/blob/master/14-recursive-sorting.md)
 15. [Binary Trees](https://github.com/cjmlgrto/fit2085-notes/blob/master/15-binary-trees.md)
 16. [Binary Search Trees](https://github.com/cjmlgrto/fit2085-notes/blob/master/16-binary-search-trees.md)
+17. [Priority Queues](https://github.com/cjmlgrto/fit2085-notes/blob/master/17-priority-queues.md)
