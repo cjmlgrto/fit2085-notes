@@ -66,6 +66,8 @@ In the above scenario:
 - `b()` returns the global variable, `x`, which is 10
 - `c()` uses a **local** variable `x`, then returns 5
 
+During execution, Python's scope searches **from the inside out**. That is, it looks for the most local variable name first, and if it does not exist, continues to search until it has to search the built-in modules for it.
+
 ## Classes
 Are code implementations of objects in object-oriented programming.
 
