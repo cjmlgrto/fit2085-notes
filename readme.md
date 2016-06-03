@@ -15,3 +15,4 @@
 11. [Iterators and Generators](https://github.com/cjmlgrto/fit2085-notes/blob/master/11-iterators-generators.md)
 12. [Hash Tables](https://github.com/cjmlgrto/fit2085-notes/blob/master/12-hash.md)
 13. [Recursion](https://github.com/cjmlgrto/fit2085-notes/blob/master/13-recursion.md)
+14. [Recursive Sorting](https://github.com/cjmlgrto/fit2085-notes/blob/master/14-recursive-sorting.md)
