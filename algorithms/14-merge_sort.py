@@ -2,7 +2,7 @@ def merge_sort(L):
     if len(L) < 2:
         return L
     else:
-        mid = len(array) // 2
+        mid = len(L) // 2
         left = merge_sort(L[:mid])
         right = merge_sort(L[mid:])
         return merge(left, right)
