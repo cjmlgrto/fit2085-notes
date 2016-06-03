@@ -59,7 +59,7 @@
 
 			# ...
 
-function:               # increment stack for return value
+function:   # increment stack for return value
 			addi	$sp, $sp, -8
 
 			# push return values
@@ -73,7 +73,6 @@ function:               # increment stack for return value
 			# initialise local variables
 			sw		$0, -4j($fp)
 			# ...
-
 ```
 
 By the end of this, `$fp` must be pointing to the 'bottom' of your new 'sub-stack' (and **must contain** the previous value of `$fp`), and your stack should look like this:
