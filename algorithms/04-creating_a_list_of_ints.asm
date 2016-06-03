@@ -39,8 +39,8 @@ loop:       lw      $t0, i
             mflo    $t4
             add     $t4, $t4, $t3
 
-            # $t4 = (4i + 4) + list address, which is $t2
-            add     $t4, $t4, $t2
+            # $t4 = (4i + 4) + list address, which is $t1
+            add     $t4, $t4, $t1
 
             # store the value
             sw      $v0, ($t4)
