@@ -13,3 +13,4 @@
 9. [Searching](https://github.com/cjmlgrto/fit2085-notes/blob/master/09-searching.md)
 10. [Linked Structures](https://github.com/cjmlgrto/fit2085-notes/blob/master/10-linked-structures.md)
 11. [Iterators and Generators](https://github.com/cjmlgrto/fit2085-notes/blob/master/11-iterators-generators.md)
+12. [Hash Tables](https://github.com/cjmlgrto/fit2085-notes/blob/master/12-hash.md)
