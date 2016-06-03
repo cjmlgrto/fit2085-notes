@@ -32,45 +32,47 @@
 7. Allocate local variables to stack
 
 ```assembly
-			.text
 			# initialise stack frame
-			# 4 * n = 4n bytes frame size
 			addi	$fp, $sp, 0
 			addi	$sp, $sp, -4n
-			
-			# initialise n local variables into stack
+
+			# initialise local variables
 			sw		$0, -4n($fp)
 			# ...
 			sw		$0, -4($fp)
-			
-			# do stuff to store values into each variable
-			sw		$blah, -4n($fp)
+
 			# ...
-			sw		$blah, -4($fp)
-			
-			# push arguments a, b, c
-			# 3 * 4 = 12 bytes of arguments
-			addi	$sp, $sp, -12
-			
-			# push arguments
-			sw		$a, -12($fp)
-			sw		$b, -8($fp)
-			sw		#c, -4($fp)
-			
+
+			# increment stack pointer for arguments
+			addi	$sp, $sp, -4k
+
+			# push local variables as arguments
+			sw		$0, 4k-4($sp)
+			# ...
+			sw		$0, 0($sp)
+
 			# call function
-			jal		func
-			
-func:		# push $ra and $fp onto stack
-			# 2 * 4 = 8 bytes
+			jal		function
+
+			# store return value
+			sw		$v0, -4n($fp)
+
+			# ...
+
+function:               # increment stack for return value
 			addi	$sp, $sp, -8
-			sw		$ra, 4($sp)
+
+			# push return values
 			sw		$fp, 0($sp)
-			
-			# copy $sp into $fp
+			sw		$ra, 4($sp)
+
+			# initialise new stack frame for function
 			addi	$fp, $sp, 0
-			
-			# initialise stack frame
-			# ... and so on!
+			add 	$sp, $sp, -4j
+
+			# initialise local variables
+			sw		$0, -4j($fp)
+			# ...
 
 ```
 
