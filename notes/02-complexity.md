@@ -4,7 +4,7 @@
 
 ## Big O Notation
 
-A program's runtime is written in Big O notation, in which n is the size of the input, and O(n) is the generalised function that outputs the runtime.
+Big O provides a simple but formal measure of the run-time behaviour of an algorithm for large inputs, **n**.
 
 - If the runtime of a function is **g(n)**, then **g(n)** is said to be **O(f(n))** if there exists constants **K** and **L** such that:
 
