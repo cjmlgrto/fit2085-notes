@@ -47,7 +47,13 @@ students = {
 ### Hashing
 Converts a specified word into a unique key that can be used to determine its position in the underlying array.
 
-The goal is to have a function that maps a _unique_ key for any input value— this is to ensure no 'collisions' occur (that is, two differnt words having the same key).
+The goal is to have a function that maps a _unique_ key for any input value— this is to ensure no 'collisions' occur (that is, two differnt words having the same key). A good hash function requires the following:
+
+- type dependent (otherwise it cannot compute a value)
+- must return a value within the array range (otherwise it will return an index error when inserting)
+- not have too many operations (otherwise slowness)
+- use as much of the key as possible (minimise collisions)
+- avoid common factors (minimise collisions)
 
 Below is a _universal_ hash function implemented in Python. It is best to use prime numbers for `TABLE_SIZE`, `a` and `b`.
 
@@ -79,7 +85,10 @@ def hash_function(word, TABLE_SIZE):
 2. Search for the item, deal with collisions
 3. If it exists and is found, remove the item
 
-## Collision Resolution ("Open Addressing")
+## Collision Resolution
+Clustering occurs when elements of similar keys create groups in a hash table array (called a probe chain)
+
+This is a problem because when a search occurs for a particular key and the actual key location has another item that doesn't belong there, it has to traverse over the entire cluster— which would affect performance.
 
 ### Linear Probing
 - Checking every item in the array until the position's conditions are perfect
