@@ -72,6 +72,9 @@ To partition:
 7. Swap the boundary with the pivot so that the pivot is now in the 'middle' of the list
 8. Do this again for every sublist before and after the pivot
 
+For quicksort, the pivot matters— the more unbalanced the partition, the more complex the runtime. The best choice of pivot for the pivot is the middle, as it will ensure the number of elements in each sub-array are almost equal.
+
+
 ```python
 def quick_sort(L):
     start = 0
