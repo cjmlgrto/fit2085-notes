@@ -32,47 +32,75 @@
 7. Allocate local variables to stack
 
 ```assembly
-			# initialise stack frame
-			addi	$fp, $sp, 0
-			addi	$sp, $sp, -4n
+main:		
+			# reset stack frame
+			addi 	$fp, $sp, 0
+			
+			# move stack pointer for n local variables
+			addi 	$sp, $sp, -4n
 
-			# initialise local variables
-			sw		$0, -4n($fp)
+			# store local variables using frame pointer
+			sw 		$0, -4n($fp)
+			# ...
+			sw		$0, -4($fp)
+
+			# move stack pointer up for k
+			addi	$sp, $sp, -4k
+
+			# push arguments using stack pointer
+			sw		$0, [4k-4]($sp)
+			# ...
+			sw 		$0, 0($sp)
+
+			# call function
+			j 		function
+
+			# ...
+
+function:
+			# move stack pointer for ra and fp
+			addi	$sp, $sp, -8
+
+			# push fp then ra
+			sw		$fp, 0($sp)
+			sw		$ra, 4($sp)
+
+			# reset stack frame
+			addi	$fp, $sp, 0
+
+			# move stack pointer for j local variables
+			addi 	$sp, $sp, -4j
+
+			# store local variables using frame pointer
+			sw 		$0, -4j($fp)
 			# ...
 			sw		$0, -4($fp)
 
 			# ...
 
-			# increment stack pointer for arguments
-			addi	$sp, $sp, -4k
+			# to access the arguments, use frame pointer positive offset + 8
+			lw		$t0, [4k + 8]($fp)
 
-			# push local variables as arguments
-			sw		$0, 4k-4($sp)
-			# ...
-			sw		$0, 0($sp)
-
-			# call function
-			jal		function
-
-			# store return value
-			sw		$v0, -4n($fp)
+			# to access local variables, use frame pointer negative offset
+			lw		$t1, -4j($fp)
 
 			# ...
 
-function:   # increment stack for return value
-			addi	$sp, $sp, -8
+			# store return value in v0
+			add		$v0, $t0, $1
 
-			# push return values
-			sw		$fp, 0($sp)
-			sw		$ra, 4($sp)
+			# move stack pointer down to pop local variables
+			addi	$sp, $sp, 4j
 
-			# initialise new stack frame for function
-			addi	$fp, $sp, 0
-			add 	$sp, $sp, -4j
+			# copy ra then fp
+			lw		$ra, 4($fp)
+			lw		$fp, ($fp)
 
-			# initialise local variables
-			sw		$0, -4j($fp)
-			# ...
+			# move stack pointer down
+			addi	$sp, $sp, 4
+
+			# return back to function caller
+			jr  	$ra
 ```
 
 By the end of this, `$fp` must be pointing to the 'bottom' of your new 'sub-stack' (and **must contain** the previous value of `$fp`), and your stack should look like this:
