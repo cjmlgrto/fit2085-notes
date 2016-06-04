@@ -2,9 +2,13 @@
 
 # Abstract Data Types
 
+## Data Types
+- A data type combines data storage with a set of operations to interact with data
+
 ## Abstract Data Types
 - Are data structures with their own operations— or known as an _interface_ (e.g. lists have `len()` or `append()`)
 - They can also be referred to as _objects_.
+- An abstract data types hides its implementation from the user, so the user's code is independent from its implementation and the user does not have to know how it is implemented.
 
 ### Abstraction
 - Extracting essential information while ignoring the rest
