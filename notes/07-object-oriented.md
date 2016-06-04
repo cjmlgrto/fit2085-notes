@@ -21,7 +21,7 @@
 - **Assignments do not alter the object itself. They only alter the reference.** Then, the variable will refer to a different object.
 
 ### Mutability and Immutability
-- Lists are **mutable**— they can be changed even when re-assigned
+- Objects (user-defined classes like lists)  are **mutable**— they can be changed even when re-assigned
 
 ```python
 L = [1,2,3]
@@ -33,7 +33,7 @@ print(L)
 >>> [5,2,3]
 ```
 
-- Integers are **immutable**— once re-assigned, a new object is referenced
+- Numbers (like floats or integers) are **immutable**— once re-assigned, a new object is referenced
 
 ```python
 X = 5
