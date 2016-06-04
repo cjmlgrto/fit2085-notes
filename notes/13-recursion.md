@@ -4,9 +4,9 @@
 
 ## Recursive Algorithms
 - Solving a large problem by solving smaller sub-problems
-- Each sub-problem is solved by _the same algorithm_
+- Each sub-problem is solved by _the same algorithm_ (a **recursive call**)
 - Until the sub-problem is so "simple" that a trivial answer can be returned (called the **base case**)
-- This is then combined and computed to solve the large problem
+- This is then combined and computed to solve the large problem (the **convergence**)
 
 The general structure in Python:
 
