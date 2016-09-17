@@ -54,3 +54,4 @@ If you see an issue, just [submit one](https://github.com/cjmlgrto/fit2085-notes
 - [Binary Tree](https://github.com/cjmlgrto/fit2085-notes/blob/master/algorithms/15-binary_tree.py)
 - [Binary Search Tree](https://github.com/cjmlgrto/fit2085-notes/blob/master/algorithms/16-binary_search_tree.py)
 - [Heap (Array)](https://github.com/cjmlgrto/fit2085-notes/blob/master/algorithms/18-heap_array.py)
+- [Trie (Linked)](https://github.com/cjmlgrto/fit2085-notes/blob/master/algorithms/19-trie.py)
