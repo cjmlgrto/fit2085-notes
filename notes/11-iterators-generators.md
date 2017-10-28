@@ -83,12 +83,34 @@ for item in linked_list:
 Cool tricks you can do with the `for` keyword:
 
 ```python
-A = [3*x for x in range(5)]
+A = (3*x for x in range(5))  #  Generator comprehension.
 print(A)
->>> [0, 3, 6, 9, 12]
+>>> <generator object <genexpr> at 0x10c63a518>
+for num in A:  # Iterate through items in generator.
+    print(num, end=" ")
+>>> 0 3 6 9 12
+print(A)  # Generator still exists.
+>>> <generator object <genexpr> at 0x10c63a518>
+for num in A:  # Generator is exhausted as we already looped through it, won't print anything.
+    print(num, end=" ")
+>>>
+# Nothing will be printed to terminal.
 
-B = [x for x in A if x % 2 == 0]
-print(B)
->>> [0, 6, 12]
+
+# Can also create generators by using the yield keyword.
+A = [0, 3, 6, 9, 12]
+
+def even_number_generator(arr):
+    for value in arr:
+        if value % 2 == 0:
+            yield value
+
+for number in even_number_generator(A):
+    print("%s is even" % number)
+>>> 0 is even
+>>> 6 is even
+>>> 12 is even
+
 ```
 
+Note that generators do not support slicing and can't be added to a list. They can only be iterated over once. You can turn a generator into a list by using `list(my_generator)`.
