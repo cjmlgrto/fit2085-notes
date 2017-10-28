@@ -83,19 +83,24 @@ for item in linked_list:
 Cool tricks you can do with the `for` keyword:
 
 ```python
-A = (3*x for x in range(5))  #  Generator comprehension.
+#  Generator comprehension.
+A = (3*x for x in range(5))
 print(A)
 >>> <generator object <genexpr> at 0x10c63a518>
-for num in A:  # Iterate through items in generator.
+
+# Iterate through items in generator.
+for num in A:
     print(num, end=" ")
 >>> 0 3 6 9 12
-print(A)  # Generator still exists.
+
+# Generator still exists.
+print(A)
 >>> <generator object <genexpr> at 0x10c63a518>
-for num in A:  # Generator is exhausted as we already looped through it, won't print anything.
+
+# Generator is exhausted as we already looped through it, nothing will be printed to terminal.
+for num in A:
     print(num, end=" ")
 >>>
-# Nothing will be printed to terminal.
-
 
 # Can also create generators by using the yield keyword.
 A = [0, 3, 6, 9, 12]
